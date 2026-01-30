@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    image: allinone-survey:latest
+    build: .
+    ports:
+      - "8005:3000"
+    volumes:
+      - ./.env.local:/app/.env.local
+    environment:
+      - NODE_ENV=production
+    restart: always 
